@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تبدیل ارز - Currency Converter</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+        <h1 class="title">
+        <i class="fas fa-exchange-alt"></i>
+         تبدیل ارز
+        </h1>
+         <!-- Theme Toggle -->
+         <button class="theme-toggle" id="themeToggle" aria-label="تغییر حالت نمایش">
+         <i class="fas fa-moon" id="themeIcon"></i>
+        </button>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="converter-card">
+             <!-- Amount Input Section -->
+             <div class="input-section">
+             <label for="amount" class="label">مبلغ را وارد کنید</label>
+             <div class="input-wrapper">
+             <input 
+                            type="number" 
+                            id="amount" 
+                            class="amount-input" 
+                            placeholder="0.00"
+                            min="0"
+                            step="0.01"
+                            autocomplete="off"
+                 >
+                <span class="input-suffix" id="fromCurrencyLabel">USD</span>
+                </div>
+                </div>
+
+                <!-- Currency Selection Section -->
+                <div class="currency-section">
+                <div class="currency-select-wrapper">
+                 <label for="fromCurrency" class="label">از ارز</label>
+                <div class="select-wrapper">
+                <select id="fromCurrency" class="currency-select">
+                 <!-- Options will be populated by JavaScript -->
+                </select>
+                <div class="select-flag" id="fromFlag"></div>
+                </div>
+                    </div>
+
+                    <!-- Swap Button -->
+                <button class="swap-btn" id="swapBtn" aria-label="تعویض ارزها">
+                <i class="fas fa-exchange-alt"></i>
+                </button>
+
+                <div class="currency-select-wrapper">
+                <label for="toCurrency" class="label">به ارز</label>
+                <div class="select-wrapper">
+                <select id="toCurrency" class="currency-select">
+                <!-- Options will be populated by JavaScript -->
+                </select>
+                <div class="select-flag" id="toFlag"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Convert Button -->
+                <button class="convert-btn" id="convertBtn">
+                    <i class="fas fa-calculator"></i>
+                    تبدیل کن
+                </button>
+
+                <!-- Loading State -->
+                <div class="loading-state" id="loadingState">
+                    <div class="spinner"></div>
+                    <p>در حال دریافت نرخ ارز...</p>
+                </div>
+
+                <!-- Result Section -->
+                <div class="result-section" id="resultSection">
+                    <div class="result-amount" id="resultAmount">0.00</div>
+                    <div class="result-info">
+                        <span class="exchange-rate" id="exchangeRate">1 USD = 0.85 EUR</span>
+                        <span class="last-updated" id="lastUpdated">آخرین به‌روزرسانی: هم اکنون</span>
+                    </div>
+                </div>
+
+                <!-- Error Message -->
+                <div class="error-message" id="errorMessage">
+                    <i class="fas fa-exclamation-triangle"></i>
+                    <span id="errorText">خطایی رخ داد. لطفاً دوباره تلاش کنید.</span>
+                </div>
+            </div>
+
+            <!-- Additional Info -->
+            <div class="info-section">
+            <div class="info-card">
+            <h3>
+             <i class="fas fa-info-circle"></i>
+             درباره نرخ ارز
+            </h3>
+            <p>نرخ‌های ارز به صورت زنده از API دریافت می‌شوند و ممکن است با نرخ‌های بانکی کمی تفاوت داشته باشند.</p>
+            </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2026 تبدیل ارز - ساخته شده با shawkat wahaj</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
